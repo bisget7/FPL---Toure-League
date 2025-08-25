@@ -39,7 +39,7 @@ df=pd.concat(all_)
 
 df['weekly_net']=df['points']-df['event_transfers_cost']
 df['month']=df['event']//4
-df['monthly_points']=df.groupby(['player', 'month']).sum()
+df['monthly_points']=df.groupby(['player', 'month'])['weekly_net'].sum()
 # df.to_excel("C:/Users/bisra/OneDrive/Desktop/_Scripts/_FPL_TG_integration/history_Fpl.xlsx")
 
 
